@@ -1,10 +1,10 @@
 #include "EasyPDLC.h"
 
-
 void EasyPDLC::OutputEnableFunction(){
     digitalWrite(outputEnable, !digitalRead(outputEnable));
 }
 
+/** @brief function responsible for passing OutputEnableFunction pointer to Ticker instance**/
 static void ticker_trigger(EasyPDLC* callback_func) {
 	callback_func->OutputEnableFunction();
 }
